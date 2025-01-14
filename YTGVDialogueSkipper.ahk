@@ -1,6 +1,10 @@
-; Death's Door Dialogue Skipper v1.3.0
+; Yellow Taxi Goes Vroom Dialogue Skipper v1.0.0
 ;
-; Authors
+; Author
+; -------
+; Gyoo (Discord: gyoo)
+;
+; Based on the work of
 ; -------
 ; Museus (Discord: Museus#7777)
 ; SpR3AD (Discord: SpR3AD#9314)
@@ -37,7 +41,7 @@ confirmKey := ""
 toggle := true
 
 ; How many times per second to send the down/up signal
-spamCPS := 13
+spamCPS := 10
 
 ;;;;;;;;;;;;;;;;;;;;;
 ; END CONFIGURATION ;
@@ -92,7 +96,7 @@ toggleactive := false
 justpressed := false
 loop
 {
-	if WinActive("ahk_exe DeathsDoor.exe")
+	if WinActive("ahk_exe Yellow Taxi Goes Vroom.exe")
     {
 		Hotkey, %spamKey%, On
 		spamKeyIsDown := GetKeyState(spamKey, "P")
