@@ -4,7 +4,7 @@ To improve accessibility and decrease the risk of RSI when speedrunning Yellow T
 To be transparent with usage, an overlay is displayed in the top left corner of the screen, and a Window Capture must be added to your scene capturing it.
 
 ## Installation
-1. Install "Current Version" (currently v2.0.18) of AutoHotKey from [https://www.autohotkey.com/](https://www.autohotkey.com/ "https://www.autohotkey.com/")
+1. Install latest v1 (currently v1.1.37.xx) of AutoHotKey from [https://www.autohotkey.com/](https://www.autohotkey.com/ "https://www.autohotkey.com/")
 2. Download the latest release of `YTGVDialogueSkipper.ahk`
 3. Double-click the script
 4. Select key to hold and Confirm key (or configure using the instructions below)
