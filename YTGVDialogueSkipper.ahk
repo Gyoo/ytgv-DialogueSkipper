@@ -35,10 +35,10 @@ overlayFontColor := "ffffff"
 spamKey := ""
 
 ; The key the script will send to the game (using capital letters will result in sending shift+lowercase key)
-confirmKey := ""
+confirmKey := "Enter"
 
 ; option to use the toggle function
-toggle := true
+toggle := false
 
 ; How many times per second to send the down/up signal
 spamCPS := 10
@@ -53,13 +53,9 @@ spamCPS := 10
 
 ; Load or prompt spam key
 if (!IsValidKey(spamKey))
-    spamKey := PromptUserForKey("Enter your desired auto-spam key:`n(visit autohotkey.com/docs/KeyList.htm for valid keys)`n`nUnfortunately controller is not supported at this time`, so please use a keyboard key.")
-
-; Prompt user for confirm key
-if (!IsValidKey(confirmKey))
 {
-    confirmKey := PromptUserForKey("What keyboard key do you have Confirm bound to? `n(Default is q)")
-	MsgBox, 4,,Would you like to use the toggle function? (press Yes or No)
+    spamKey := PromptUserForKey("Enter your desired auto-spam key:`n(visit autohotkey.com/docs/KeyList.htm for valid keys)`n`nUnfortunately controller is not supported at this time`, so please use a keyboard key.")
+    MsgBox, 4,,Would you like to use the toggle function? (press Yes or No)
 	IfMsgBox Yes
 		toggle := true
 	else
@@ -83,9 +79,9 @@ Gui, skippingOverlay:Color, c%overlayWindowBackground%
 Gui, skippingOverlay:Font, s16 q1 c%overlayFontColor%, %Font%
 Gui, skippingOverlay:margin,, 0
 Gui, skippingOverlay:Add,Text,vtext w300,
-Gui, skippingOverlay:Show, y0 x0 NoActivate, DD_SkippingOverlay_v1.3.0
+Gui, skippingOverlay:Show, y0 x0 NoActivate, YTGV_SkippingOverlay_v1.0.0
 WinSet, TransColor, c%overlayWindowBackground% 255
-texttoshow := "Skipping... (v1.3.0)"
+texttoshow := "Skipping... (v1.0.0)"
 
 ; Main loop
 global textIsHidden := true
@@ -96,7 +92,7 @@ toggleactive := false
 justpressed := false
 loop
 {
-	if WinActive("ahk_exe Yellow Taxi Goes Vroom.exe")
+	if WinActive("ahk_exe Yellow` Taxi` Goes` Vroom.exe")
     {
 		Hotkey, %spamKey%, On
 		spamKeyIsDown := GetKeyState(spamKey, "P")
